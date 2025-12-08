@@ -1,0 +1,138 @@
+/* --------------------------------------------------
+   Global Theme Variables
+-------------------------------------------------- */
+:root {
+  --white-color: #ffffff;
+  --primary-color: #000B21;
+  --secondary-color: #00D79B;
+ --primary-color-rgb: 0, 11, 33;
+  /* Base backgrounds */
+  --bg-color: var(--white-color);
+  --text-color: var(--primary-color);
+  --card-bg: var(--white-color);
+
+  /* Section backgrounds */
+  --secondary-bg: var(--white-color);
+  --pcard-bg: #04DDF7;
+  --scard-bg: #00D79B;
+  --p-iconBg: var(--white-color);
+  --p-iconColor: #04DDF7;
+  --CardlineColor: var(--white-color);
+
+  --hero-bg-start: rgba(14, 31, 81, 0.05);
+  --hero-bg-end: rgba(32, 70, 183, 0.05);
+
+  --about-bg: var(--white-color);
+  --dark-bg: var(--primary-color);
+
+  --team-bg: #f9f9f9;
+  --contact-bg: var(--primary-color);
+  --blog-bg: #f7f7f7;
+  --footer-bg: var(--white-color);
+  --testimonialcard: var(--white-color);
+  --testimonialborder: rgba(0 11 33 / 20%);
+
+  --formFields: #f9f9f9;
+  --formFieldsColor: var(--primary-color); /* FIXED */
+
+  --socialBg: var(--secondary-color);
+  --socialColor: var(--white-color);
+
+  --blogpagebg: rgba(0, 215, 155, 0.15);
+  --contactpagebg: rgba(0, 215, 155, 0.05);
+}
+
+/* --------------------------------------------------
+   Dark Theme Overrides
+-------------------------------------------------- */
+body.dark-theme {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--white-color);
+  --primary-color-rgb: 255, 255, 255;
+  --primary-color: var(--white-color);
+
+  --card-bg: #0f1724;
+
+  --hero-bg-start: rgba(255, 255, 255, 0.05);
+  --hero-bg-end: rgba(0, 11, 33, 1);
+
+  --secondary-bg: rgba(0, 215, 155, 0.05);
+
+  --about-bg: var(--dark-bg);
+  --team-bg: var(--dark-bg);
+  --contact-bg: var(--dark-bg);
+  --blog-bg: var(--dark-bg);
+  --footer-bg: var(--dark-bg);
+
+  --testimonial-bg: var(--dark-bg); /* FIXED */
+  --testimonialcard-bg: var(--primary-color);
+  --testimonialborder: rgba(0, 215, 155, 0.20);
+
+  --pcard-bg: var(--secondary-bg);
+  --scard-bg: var(--secondary-bg);
+  --p-iconBg: var(--secondary-bg);
+  --p-iconColor: var(--secondary-color);
+  --CardlineColor: var(--p-iconColor);
+
+  --formFields: var(--secondary-bg);
+  --formFieldsColor: var(--p-iconColor);
+
+  --socialBg: var(--secondary-bg);
+  --socialColor: var(--secondary-color);
+
+  --blogpagebg: var(--dark-bg);
+  --contactpagebg: var(--dark-bg);
+}
+
+/* --------------------------------------------------
+   Global Apply
+-------------------------------------------------- */
+html,
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 250ms ease, color 250ms ease;
+}
+
+/* Hero Section */
+.herosection {
+  background: linear-gradient(200deg, var(--hero-bg-start), var(--hero-bg-end));
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid rgba(var(--primary-color-rgb), 0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Theme Dropdown */
+.theme-dropdown {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px 0;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.theme-dropdown .item {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.theme-dropdown .item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Text transition */
+.theme-text {
+  transition: color 180ms ease;
+}

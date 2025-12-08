@@ -1,0 +1,305 @@
+/* ===========================================
+   FONTS & VARIABLES
+=========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100..900&family=Raleway:wght@100..900&display=swap');
+
+:root {
+  --font-oswald: "Oswald", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+
+  --primary-color: #000B21;
+  --secondary-color: #00D79B;
+  --white-color: #ffffff;
+  --secondary-light: #04DDF7;
+}
+
+/* ===========================================
+   SWIPER
+=========================================== */
+.swiper, 
+.swiper-slide {
+  width: 100%;
+  height: calc(100% + 200px);
+}
+
+.swiper-pagination {
+  bottom: -45px !important;
+}
+
+.swiper-pagination-bullet {
+  border: 1px solid var(--secondary-color) !important;
+  width: 20px !important;
+  height: 20px !important;
+  background: var(--white-color) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* ===========================================
+   HERO ANIMATIONS
+=========================================== */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.hero-animate {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+.hero-image-animate {
+  animation: fadeRight 1s ease-out forwards;
+}
+
+/* ===========================================
+   SCROLL REVEAL
+=========================================== */
+.reveal,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.scroll-reveal,
+.scroll-reveal-img {
+  opacity: 0;
+  transition: 0.8s ease-out;
+}
+
+.reveal-up,
+.scroll-reveal { transform: translateY(40px); }
+.reveal-left { transform: translateX(-50px); }
+.reveal-right,
+.scroll-reveal-img { transform: translateX(50px); }
+
+.reveal-visible,
+.scroll-reveal.visible,
+.scroll-reveal-img.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* ===========================================
+   CARD HOVER EFFECTS
+=========================================== */
+.card-hover { cursor: pointer; }
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.15);
+}
+
+.teamcard {
+  transition: 0.3s ease-out;
+}
+.teamcard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 215, 155, 0.05);
+  border-color: var(--primary-color);
+}
+
+/* ===========================================
+   TYPOGRAPHY
+=========================================== */
+.typo-h1 { font-size: 48px; }
+.typo-h2 { font-size: 40px; }
+.typo-h3 { font-size: 32px; }
+.typo-h4 { font-size: 24px; }
+.typo-h5 { font-size: 20px; }
+.typo-h6 { font-size: 18px; }
+.typo-p  { font-size: 16px; }
+
+/* Shared responsive font scale */
+@media (max-width: 1140px) { 
+  .typo-h1 { font-size: 42px; }
+  .typo-h2 { font-size: 36px; }
+  .typo-h3 { font-size: 30px; }
+  .typo-h4 { font-size: 22px; }
+  .typo-h5 { font-size: 18px; }
+  .typo-h6 { font-size: 17px; }
+  .typo-p  { font-size: 15px; }
+}
+
+@media (max-width: 1024px) { 
+  .typo-h1 { font-size: 38px; }
+  .typo-h2 { font-size: 34px; }
+  .typo-h3 { font-size: 28px; }
+  .typo-h4 { font-size: 20px; }
+  .typo-h6,
+  .typo-h5 { font-size: 18px; }
+  .typo-p  { font-size: 15px; }
+}
+
+@media (max-width: 991px) { 
+  .typo-h1 { font-size: 34px; }
+  .typo-h2 { font-size: 30px; }
+  .typo-h3 { font-size: 26px; }
+  .typo-h4 { font-size: 20px; }
+  .typo-h5,
+  .typo-h6 { font-size: 16px; }
+  .typo-p  { font-size: 14px; }
+}
+
+@media (max-width: 767px) { 
+  .typo-h1 { font-size: 30px; }
+  .typo-h2 { font-size: 26px; }
+  .typo-h3 { font-size: 22px; }
+  .typo-h4 { font-size: 18px; }
+  .typo-h5 { font-size: 16px; }
+  .typo-h6 { font-size: 15px; }
+  .typo-p  { font-size: 14px; }
+}
+
+/* ===========================================
+   VIDEO SECTION
+=========================================== */
+.videocontent {
+  background: var(--footer-bg);
+  padding: 70px 15px;
+}
+
+@media (max-width: 1140px) { .videocontent { padding: 60px 15px; } }
+@media (max-width: 1024px) { .videocontent { padding: 50px 15px; } }
+@media (max-width: 991px)  { .videocontent { padding: 40px 15px; } }
+@media (max-width: 767px)  { .videocontent { padding: 30px 15px; } }
+
+/* ===========================================
+   GRID SYSTEM (TEAM + BLOG)
+=========================================== */
+.team-grid,
+.blog-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.team-grid { grid-template-columns: repeat(5, 1fr); }
+.blog-grid { grid-template-columns: repeat(3, 1fr); }
+
+/* 4 → 3 → 2 → 1 responsive */
+@media (max-width: 1140px) { 
+  .team-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 1024px) { 
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 991px) { 
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) { 
+  .team-grid,
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+/* ------------------------------
+    MASONRY GRID
+------------------------------ */
+.masonry {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ------------------------------
+   RESPONSIVE BREAKPOINTS
+------------------------------ */
+
+/* 1140px → 1025px */
+@media (max-width: 1140px) and (min-width: 1025px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+/* 1024px → 992px */
+@media (max-width: 1024px) and (min-width: 992px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+/* 991px → 768px */
+@media (max-width: 991px) and (min-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+/* 768px → 320px */
+@media (max-width: 767px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+
+
+/* ===========================================
+   HAMBURGER MENU
+=========================================== */
+.hamburger-btn {
+  width: 32px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.hamburger-btn .line {
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.line1.active { transform: rotate(45deg) translate(5px, 6px); }
+.line2.active { opacity: 0; }
+.line3.active { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* MOBILE MENU */
+.mobile-menu {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-menu.open {
+  max-height: 300px;
+  background: #f1f1f1;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  right: 10px;
+  top: 100px;
+  width: calc(100% - 20px);
+  z-index: 9;
+}
+
+.mobile-menu nav { padding: 15px 0; }
